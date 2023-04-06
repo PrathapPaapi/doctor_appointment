@@ -1,0 +1,20 @@
+.main-box {
+  height: 350px; 
+  background-color: white; 
+  border-radius: 20px; 
+  text-align: center;
+}
+
+.my-appointments-button.btn {
+  font-weight: 600;
+  font-size: large; 
+  width: 680px; 
+  height: 55px;
+}
+
+.pay-button.btn {
+  font-weight: 600;
+  font-size: large; 
+  height: 55px;
+}
+

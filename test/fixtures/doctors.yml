@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor_name: MyString
+  address: MyText
+  image_url: MyString
+  slots: MyText
+
+two:
+  doctor_name: MyString
+  address: MyText
+  image_url: MyString
+  slots: MyText
