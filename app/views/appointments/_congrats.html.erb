@@ -1,8 +1,68 @@
-<div class="container" style="width: 700px; margin-top: 10%">
+<div class="container" style="width: 700px; margin-top: 10%; align-items: center">
   <div class="main-box">
-    <%= image_tag("congrats.png", :style => "width: 45%; margin-top: 20px;") %>
-    <p style="font-size: x-large; font-weight: 300; margin-top: 5px;" >Appointment Booked</p>
+    <%= image_tag("congrats.svg", :style => "width: 45%; margin-top: 20px;") %>
+    <p style="color: #2E7D2E;font-size: 25px; font-weight: 700;"> Congratulations</p>
+    <p style="font-size: x-large; font-weight: 300; margin-top: -10px;" >Appointment Booked</p>
+    <div class="d-flex" style="margin-top: -10px; margin-left: 200px;">
+      <%= image_tag("purple_calendar.svg") %>
+      <p style=" color: #542EBF; font-size: 22px; font-weight: 700; margin-top: 15px; margin-left: 10px;">
+        <%= Slot.find(@params[:slot_id]).slot_time.strftime("#{Slot.find(@params[:slot_id]).slot_time.day.ordinalize} %B, #{Slot.find(@params[:slot_id]).slot_time.in_time_zone("Chennai").strftime("%I:%M %p")}") %>
+      </p>
+    </div>
+
+    <p style="font-size: 14px;"> Meeting starts in </p>
+    <div>
+      <ul style="margin-left: -35px">
+        <li>
+          <div style="display: flex;">
+            <span class="time-spans" id="days_tens"></span>
+            <span class="time-spans" id="days_ones"></span>
+            <span> : </span>
+          </div>
+          <p>Days</p>
+        </li>
+
+        <li>
+          <div style="display: flex;">
+            <span class="time-spans" id="hours_tens"></span>
+            <span class="time-spans" id="hours_ones"></span>
+            <span style="margin-left: 3px;"> : </span>
+          </div>
+          <p>Hours</p>
+        </li>
+
+        <li>
+          <div style="display: flex;">
+            <span class="time-spans" id="minutes_tens"></span>
+            <span class="time-spans" id="minutes_ones"></span>
+            <span> : </span>
+          </div>
+          <p>Mins</p>
+        </li>
+
+        <li>
+          <div style="display: flex;">
+            <span class="time-spans" id="seconds_tens"></span>
+            <span class="time-spans" id="seconds_ones"></span>
+          </div>
+          <p>Secs</p>
+        </li>
+      </ul>
+    </div>
+
   </div>
+
+
   <%= button_to 'My Appointments', appointments_my_appointments_path, method: "get", class: "my-appointments-button btn btn-primary btn-lg rounded-2 mt-5"%>
+
+
+  <script>
+    let slot_time = "<%= Slot.find(@params[:slot_id]).slot_time %>";
+    console.log(slot_time);
+    let time = new Date(slot_time).getTime();
+    console.log(time);
+
+    let x = setInterval(countdown_timer, 1000, time );
+  </script>
 
 </div> 
