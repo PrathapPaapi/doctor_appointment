@@ -1,8 +1,6 @@
 class DoctorsController < ApplicationController
-  
 
   before_action :set_doctor, only: %i[ show edit update destroy ]
-  
 
   # GET /doctors or /doctors.json
   def index
@@ -37,6 +35,20 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def next_slot_available(doctor_id)
+    slots = Doctor.find(doctor_id).slots
+    time = "Not Available"
+    slots.each do |slot|
+      if slot.available? && slot.slot_time > Time.now
+        time = slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p %b %d")
+        break
+      end
+    end
+    time
+  end
+
+  helper_method :next_slot_available
+
   # PATCH/PUT /doctors/1 or /doctors/1.json
   def update
     respond_to do |format|
@@ -61,13 +73,14 @@ class DoctorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_doctor
-      @doctor = Doctor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def doctor_params
-      params.require(:doctor).permit(:doctor_name, :address, :image_url, :slots)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_doctor
+    @doctor = Doctor.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def doctor_params
+    params.require(:doctor).permit(:doctor_name, :address, :image_url, :slots)
+  end
 end

@@ -1,30 +1,37 @@
-<div class="container mt-4" style="width: 850px;">
+<div class="container mt-4" style="width: 850px; margin: auto;">
   <div class="d-flex align-items-center"  >
     <%= image_tag("stethoscope.png", style: "width: 40px; margin-right: 12px;") %>
     <p style="font-size: 25px; font-weight:400; margin-top: 15px">My Doctors</p>
   </div>
-  <div class="row justify-content-between mt-4 ">
-    <% @doctors.each do |doctor| %>
-      <div class="card" style="margin-bottom: 30px;width: 400px; height: 180px; border-opacity: 0.7;">
-        <div class="row">
-          <div class="col-4 col-lg-4">
-            <%= image_tag(doctor.image_url, :style => "width: 100px; height: 100px; padding: 10px 0px 0px 0px") %>
-          </div>
-          <div class="col">
-            <div class="card-body" style="margin-left: -35px; ">
-              <h5 class="card-title" style="font-size: x-large"><%= doctor.doctor_name %></h5>
-              <p class="card-text text-muted" style="font-size: large; opacity: 0.8"><%= doctor.address %></p>
+  <div>
+    <div class="row mt-4" style="margin: auto">
+      <% @doctors.each do |doctor| %>
+        <div class="card" style="margin-bottom: 24px; margin-right: 42px; width: 332px; height: 151px; border-opacity: 0.7;">
+          <div class="row">
+            <div class="col col-5">
+              <%= image_tag(doctor.image_url, :style => "width: 76px; height: 76px; margin: 10px 0px 0px 0px; border-radius: 8px;") %>
+            </div>
+            <div class="col">
+              <div class="card-body" style="margin-left:-65px; ">
+                <h5 class="card-title" style="font-size: large"><%= doctor.doctor_name %></h5>
+                <p class="card-text text-muted" style="font-size: large; opacity: 0.8"><%= doctor.address %></p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-between "style="height: 100%; align-items: center;">
-          <p style="margin: 0 0 0 10px; font-weight: 450; color: rgb(0, 150, 0)"> Next Available - </p>
-          
-          <%= button_to 'Book Visit', appointments_index_path, method: "get", class: "btn btn-primary btn-lg rounded-2", style: "text-align: center; font-weight: 600; font-size: large; width: 170px; height: 55px; margin-right: 10px"%>
-        </div>
+          <div class="d-flex justify-content-between "style="height: 100%; align-items: center; line-height: 20px;">
+            <p style="margin: 0; font-size: 12px; font-weight: 600; color: rgb(0, 150, 0)"> Next Available -
+            <p style="margin: 0; font-size: 12px; font-weight: 400; opacity: 0.8;"><%= next_slot_available(doctor.id) %> </p>
+            </p>
 
-      </div>
-    <%end %>
+            <%= button_to "Book Visit", appointments_index_path, params: {doctor_id: doctor.id}, method: "get", class: "btn btn-primary btn-lg rounded-2", style: "text-align: center; font-weight: 600; font-size: 14px; width: 132px; margin-right: 10px"%>
+            <%#= button_to "Book Visit", appointments_index_path(doctor_id: doctor.id), data: {turbo_stream: true, turbo_method: :get}, class: "btn btn-primary btn-lg rounded-2", style: "text-align: center; font-weight: 600; font-size: 14px; width: 132px; margin-right: 10px"%>
+
+          </div>
+
+        </div>
+      <%end %>
+    </div>
   </div>
+
 </div>
 
