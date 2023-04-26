@@ -1,0 +1,16 @@
+Dear <%= @user.name %>,
+Just a friendly reminder that you have an upcoming appointment with Dr.<%=  Doctor.find(Slot.find(@user.slot_id).doctor_id).doctor_name %>.
+
+Date - <%= Slot.find(@user.slot_id).slot_time.in_time_zone("Chennai").strftime("%A, #{Slot.find(@user.slot_id).slot_time.day.ordinalize}, %B") %>
+Time - <%= Slot.find(@user.slot_id).slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %>
+Location - <%= Doctor.find(Slot.find(@user.slot_id).doctor_id).address %>
+
+Currency Opted - <%= @user.currency %>
+Amount paid - <%= 500*@user.currency_rate %> <%= @user.currency %>
+
+
+
+Have a wonderful day
+
+Warm Regards,
+Medi App
