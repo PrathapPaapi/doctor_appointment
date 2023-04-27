@@ -1,0 +1,11 @@
+<%= form_with url: appointments_booked_appointments_list_path , method: :get do |form| %>
+  <div class="form-group mt-4">
+    <div class="my-5">
+      <%= form.label :email, style: "font-size: 16px; font-weight: 600;" %>
+      <%= form.text_field :email, class: "form-control border-2 border-secondary border-opacity-50", style: "height: 50px; background-color: rgb(245, 242, 252)", placeholder: "Enter Email" %>
+    </div>
+  </div>
+  <div>
+    <%= form.submit "next", data: {turbo_stream: true, turbo_method: :get}, class: "pay-button btn btn-primary btn-lg rounded-2 w-100 mt-5", :onclick=> 'loader()' %>
+  </div>
+<% end %>
