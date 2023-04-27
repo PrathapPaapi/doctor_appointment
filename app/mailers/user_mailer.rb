@@ -1,8 +1,9 @@
 class UserMailer < ApplicationMailer
   default from: 'prathaprocks999@gmail.com'
 
-  def notify(user)
+  def notify(user, slot)
     @user = user
+    @slot = slot
     mail(to: @user.email, subject: "Appointment Confirmation")
   end
 end

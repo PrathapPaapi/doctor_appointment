@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   get 'appointments/add_details'
   get 'appointments/congrats'
   get 'appointments/select_slot'
-  get 'appointments/my_appointments'
   get 'appointments/slots'
+  get 'appointments_booked/my_appointments'
+  get 'appointments_booked/appointments_login'
+  get 'appointments_booked/appointments_list'
   
   resources :doctors
   resources :appointments
+  resources :appointments_booked
   root 'doctors#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

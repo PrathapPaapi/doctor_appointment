@@ -2,18 +2,17 @@
   <%= @slot_id %>
   <h2 style="text-align: center; font-weight: 600;">Add Details</h2>
   <div class="form-section">
+    <% if @user.errors.any? %>
+      <div id="error_explanation" style="color: #B00100; background-color: cornsilk;">
+        <h5>Please enter correct inputs</h5>
+        <ul>
+          <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <%= form_with model: @user, url: appointments_congrats_path , method: :get do |form| %>
-      <% if @user.errors.any? %>
-        <div id="error_explanation" style="color: #B00100; background-color: cornsilk;">
-          <!--        <h4><%#= pluralize(@user.errors.count, "error") %></h4>-->
-          <h5>Please enter correct inputs</h5>
-          <ul>
-            <% @user.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
       <div class="form-group mt-4">
         <div class="my-5">
           <%= form.label :name, style: "font-size: 16px; font-weight: 600;" %>
@@ -27,7 +26,7 @@
           <button class="cur-btn btn btn-light btn-lg border border-secondary border-opacity-25" style="width: 120px; height: 43px;" value="INR" onclick = 'toggleCurrencyActive(event)'>INR</button>
           <button class="cur-btn btn btn-light btn-lg border border-secondary border-opacity-25" style="width: 120px; height: 43px;" value="USD" onclick = 'toggleCurrencyActive(event)'>USD</button>
           <button class="cur-btn btn btn-light btn-lg border border-secondary border-opacity-25" style="width: 120px; height: 43px;" value="EUR" onclick = 'toggleCurrencyActive(event)'>EUR</button>
-          <%= form.hidden_field :currency, value: "" %>
+          <%= form.hidden_field :currency, value: "INR" %>
         </div>
         <div>
           <%= form.hidden_field :slot_id, value: @slot_id%>

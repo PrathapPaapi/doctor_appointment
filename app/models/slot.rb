@@ -1,4 +1,4 @@
 class Slot < ApplicationRecord
   belongs_to :doctor
-  # belongs_to :user
+  # validates :currency, presence: true
 end
