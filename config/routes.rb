@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'appointments_booked/appointments_login'
   get 'appointments_booked/appointments_list'
   get 'appointments_booked/update_appointment_list'
+  get 'appointments_booked/generate_invoice'
   
   resources :doctors
   resources :appointments

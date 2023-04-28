@@ -44,6 +44,10 @@ gem "bootsnap", require: false
 
 gem 'whenever', :require => false
 
+gem 'prawn-rails'
+
+gem 'csv'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88857f79-55db-4551-a699-89ff70f59429" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/consult.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/small_calendar.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/appointments_booked.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestPDF.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/prawn-rails.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paapi@fakemail.com_56070316753.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paapi@fakemail.com_56070316753.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/doctors/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +326,7 @@
       <updated>1681389735247</updated>
       <workItem from="1681389736863" duration="13818000" />
       <workItem from="1681726028736" duration="111732000" />
-      <workItem from="1682572078149" duration="22736000" />
+      <workItem from="1682572078149" duration="30165000" />
     </task>
     <servers />
   </component>
@@ -363,6 +364,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1682658337303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
+    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1682666043704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
   </component>
 </project>
