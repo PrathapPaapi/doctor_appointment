@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'appointments_booked/my_appointments'
   get 'appointments_booked/appointments_login'
   get 'appointments_booked/appointments_list'
+  get 'appointments_booked/update_appointment_list'
   
   resources :doctors
   resources :appointments

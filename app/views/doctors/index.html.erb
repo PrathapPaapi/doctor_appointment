@@ -6,7 +6,7 @@
   <div>
     <div class="row mt-4" style="margin: auto">
       <% @doctors.each do |doctor| %>
-        <div class="card" style="margin-bottom: 24px; margin-right: 42px; width: 332px; height: 151px; border-opacity: 0.7;">
+        <div class="card" style="margin-bottom: 24px; margin-right: 42px; width: 332px; height: 151px;">
           <div class="row">
             <div class="col col-5">
               <%= image_tag(doctor.image_url, :style => "width: 76px; height: 76px; margin: 10px 0px 0px 0px; border-radius: 8px;") %>
@@ -24,8 +24,6 @@
             </p>
 
             <%= button_to "Book Visit", appointments_index_path, params: {doctor_id: doctor.id}, method: "get", class: "btn btn-primary btn-lg rounded-2", style: "text-align: center; font-weight: 600; font-size: 14px; width: 132px; margin-right: 10px"%>
-            <%#= button_to "Book Visit", appointments_index_path(doctor_id: doctor.id), data: {turbo_stream: true, turbo_method: :get}, class: "btn btn-primary btn-lg rounded-2", style: "text-align: center; font-weight: 600; font-size: 14px; width: 132px; margin-right: 10px"%>
-
           </div>
 
         </div>

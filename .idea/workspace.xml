@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88857f79-55db-4551-a699-89ff70f59429" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/assets/images/clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/consult.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/small_calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/appointments_booked.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/slot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/slot.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/appointments/_add_details.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_add_details.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/appointments/_congrats.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_congrats.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/appointments_booked/appointments_login.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments_booked/appointments_login.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/appointments_booked/my_appointments.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments_booked/my_appointments.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/doctors/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/notify.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/notify.text.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/doctors/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20230427051436_remove_currency_currency_rate_from_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20230427051436_remove_currency_currency_rate_from_users.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,7 +325,7 @@
       <updated>1681389735247</updated>
       <workItem from="1681389736863" duration="13818000" />
       <workItem from="1681726028736" duration="111732000" />
-      <workItem from="1682572078149" duration="14071000" />
+      <workItem from="1682572078149" duration="22736000" />
     </task>
     <servers />
   </component>
@@ -369,6 +363,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1682585199026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
+    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1682658337303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
   </component>
 </project>
