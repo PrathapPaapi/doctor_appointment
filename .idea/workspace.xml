@@ -5,16 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88857f79-55db-4551-a699-89ff70f59429" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TestPDF.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/prawn-rails.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paapi@fakemail.com_56070316753.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paapi@fakemail.com_56070316753.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/currency_conversion_rate.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/date_time_helper.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translation_usage.patch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/appointments.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/appointments.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appointments_booked_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/appointments_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/doctors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/doctors_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/appointments_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/appointments_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/slot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/slot.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/appointments/_add_details.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_add_details.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/appointments/_congrats.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_congrats.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/appointments/_select_slot.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_select_slot.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/appointments/_slots.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments/_slots.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/appointments_booked/appointments_list.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/doctors/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/doctors/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/doctors/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user_mailer/notify.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_mailer/notify.text.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +339,7 @@
       <updated>1681389735247</updated>
       <workItem from="1681389736863" duration="13818000" />
       <workItem from="1681726028736" duration="111732000" />
-      <workItem from="1682572078149" duration="30165000" />
+      <workItem from="1682572078149" duration="36894000" />
     </task>
     <servers />
   </component>
@@ -364,6 +377,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1682666043704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
+    <SUITE FILE_PATH="coverage/doctor_appointment@doctor_appointment.rcov" NAME="doctor_appointment Coverage Results" MODIFIED="1683094109110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="doctor_appointment" />
   </component>
 </project>

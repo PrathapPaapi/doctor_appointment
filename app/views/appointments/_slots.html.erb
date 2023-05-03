@@ -6,17 +6,17 @@
 
   <div class="slot-buttons d-flex mt-2">
     <% @slots.each do |slot| %>
-      <% if slot.slot_time.in_time_zone("Chennai") < Time.now.in_time_zone("Chennai") %>
+      <% if in_ist(slot.slot_time) < in_ist(Time.now) %>
         <div>
-          <button class="slot-btn btn btn-outline-secondary rounded-2 disable" disabled > <%= slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %> </button>
+          <button class="slot-btn btn btn-outline-secondary rounded-2 disable" disabled > <%= displayable_time(slot.slot_time) %> </button>
         </div>
       <% elsif slot.present && slot.available %>
         <div>
-          <button class="slot-btn btn btn-outline-primary rounded-2" onclick="toggleActive(event)" data-test-target="slotId" value="<%= slot.id %>" data-action='click->test#setParamForBookAppointment' > <%= slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %> </button>
+          <button class="slot-btn btn btn-outline-primary rounded-2" onclick="toggleActive(event)" data-test-target="slotId" value="<%= slot.id %>" data-action='click->test#setParamForBookAppointment' > <%= displayable_time(slot.slot_time) %> </button>
         </div>
       <% else %>
         <div>
-          <button class="slot-btn btn btn-outline-secondary rounded-2 disable" disabled > <%= slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %> </button>
+          <button class="slot-btn btn btn-outline-secondary rounded-2 disable" disabled > <%= displayable_time(slot.slot_time) %> </button>
         </div>
       <% end %>
     <% end  %>

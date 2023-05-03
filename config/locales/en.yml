@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  appointments:
+    select_slot:
+      high_demand_warning_text: "Due to high demand, it is difficult to reschedule appointments. Please book your slot carefully!"

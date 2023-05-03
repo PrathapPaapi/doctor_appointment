@@ -1,8 +1,8 @@
 Dear <%= @user.name %>,
 Just a friendly reminder that you have an upcoming appointment with Dr.<%=  Doctor.find(@slot.doctor_id).doctor_name %>.
 
-Date - <%= @slot.slot_time.in_time_zone("Chennai").strftime("%A, #{@slot.slot_time.day.ordinalize}, %B") %>
-Time - <%= @slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %>
+Date - <%= displayable_date(@slot.slot_time) %>
+Time - <%= displayable_time(@slot.slot_time) %>
 Location - <%= Doctor.find(@slot.doctor_id).address %>
 
 Currency Opted - <%= @slot.currency %>

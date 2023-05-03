@@ -1,4 +1,11 @@
 class Slot < ApplicationRecord
   belongs_to :doctor
-  # validates :currency, presence: true
+  def self.update_currency_and_user_id(params, user_id)
+    slot = Slot.find(params[:slot_id])
+    slot.available = false
+    slot.currency = params[:currency]
+    slot.currency_rate = CurrencyConversionRate.get_currency_rate(params[:currency])
+    slot.user_id = user_id
+    slot.save
+  end
 end

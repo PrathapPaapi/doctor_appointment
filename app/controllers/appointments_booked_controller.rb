@@ -42,8 +42,6 @@ class AppointmentsBookedController < ApplicationController
         invoice("PDF", slot_id)
       end
     end
-    # invoice(slot_id)
-    # redirect_to action: 'appointments_list'
   end
 
   private
@@ -63,8 +61,8 @@ class AppointmentsBookedController < ApplicationController
     slot = Slot.find(slot_id)
     user = User.find(slot.user_id)
     doctor = Doctor.find(slot.doctor_id)
-    date = slot.slot_time.in_time_zone("Chennai").strftime("%A, #{slot.slot_time.day.ordinalize}, %B")
-    time = slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p")
+    date = displayable_date(slot.slot_time)
+    time = displayable_time(slot.slot_time)
     invoice_id = "#{user.name} #{user.email} #{Time.now}".to_i(36)
     amount_paid = "#{500 * slot.currency_rate} #{slot.currency}"
     file_name = nil

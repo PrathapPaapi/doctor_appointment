@@ -5,8 +5,8 @@
     <p style="font-size: x-large; font-weight: 300; margin-top: -10px;" >Appointment Booked</p>
     <div class="d-flex" style="margin-top: -10px; margin-left: 200px;">
       <%= image_tag("purple_calendar.svg") %>
-      <p style=" color: #542EBF; font-size: 22px; font-weight: 700; margin-top: 15px; margin-left: 10px;">
-        <%= Slot.find(@params[:slot_id]).slot_time.strftime("#{Slot.find(@params[:slot_id]).slot_time.day.ordinalize} %B, #{Slot.find(@params[:slot_id]).slot_time.in_time_zone("Chennai").strftime("%I:%M %p")}") %>
+      <p style=" color: #542EBF; font-size: 22px; font-weight: 700; margin-top: 15px; margin-left: 10px;">      
+        <%= @slot.slot_time.strftime("#{@slot.slot_time.day.ordinalize} %B, #{displayable_time(@slot.slot_time)}") %>
       </p>
     </div>
 
@@ -49,20 +49,15 @@
         </li>
       </ul>
     </div>
-
   </div>
-
 
   <%= button_to 'My Appointments', appointments_booked_my_appointments_path, method: :get, class: "my-appointments-button btn btn-primary btn-lg rounded-2 mt-5"%>
 
-
   <script>
-    let slot_time = "<%= Slot.find(@params[:slot_id]).slot_time %>";
+    let slot_time = "<%= @slot.slot_time %>";
     console.log(slot_time);
     let time = new Date(slot_time).getTime();
     console.log(time);
-
     let x = setInterval(countdown_timer, 1000, time );
   </script>
-
 </div> 

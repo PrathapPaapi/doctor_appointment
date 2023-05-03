@@ -12,7 +12,7 @@
         <% @slots.each do |slot| %>
           <% if ((DateTime.now + i.day).day) == (slot.slot_time.day) %>
             <% time = (DateTime.now + i.day) %>
-              <%= link_to "#{time.strftime("%A, #{time.day.ordinalize}, %B")}",
+              <%= link_to "#{displayable_date(slot.slot_time)}",
                           appointments_slots_path(day: time.strftime("%B %d, %Y"), doctor_id: @doctor_id),
                           data: {turbo_stream: true, turbo_method: :get},
                           class: "slot-date-btn btn btn-outline-primary rounded-2",
@@ -25,23 +25,11 @@
     <h3 class=" arrow-btn right" onclick="rightScroll()"> > </h3>
   </div>
 
-<!--  <div class="day-buttons">-->
-    <%# i = 0%>
-    <%# @slots.each do |slot| %>
-      <%# if ((DateTime.now + i.day).day) == (slot.slot_time.day) %>
-        <%# time = (DateTime.now + i.day) %>
-        <%#= link_to "#{time.strftime("%A, #{time.day.ordinalize}, %B")}", appointments_slots_path(day: time.strftime("%B %d, %Y"), doctor_id: @doctor_id), data: {turbo_stream: true, turbo_method: :get}, class: "slot-date-btn btn btn-outline-primary rounded-2", :onclick => 'toggleDateActive(event)' %>
-        <%# i += 1 %>
-      <%# end %>
-    <%#end %>
-<!--  </div>-->
-
   <div id="slots">
-
   </div>
 
   <div class="mt-5">
-    <p class="high-demand-warning-text">Due to high demand, it is difficult to reschedule appointments. Please book your slot carefully!</p>
+    <p class="high-demand-warning-text"><%= t('appointments.select_slot.high_demand_warning_text')%></p>
     <%= link_to "Book Appointment", appointments_add_details_path, id: "book-appointment", "data-test-target": "bookAppointment", data: {turbo_stream: true, turbo_method: :get}, class: "btn btn-primary btn-lg rounded-2", disabled: true, style: "text-align: center; font-weight: 600; font-size: large; width: 100%; height: 56px; margin-right: 10px"%>
   </div>
 </div>

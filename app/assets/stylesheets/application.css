@@ -23,6 +23,55 @@
 }
 
 .header {
- background-color: white;
- box-shadow: 0px 5px 10px rgb(222, 211, 242);
+ align-items: center;
+ margin-left: 150px;
+}
+
+.medi-app {
+ color: black;
+ text-decoration: none;
+ font-size: x-large;
+ font-weight: 500;
+}
+
+.my-appointments-header {
+ font-weight: 300;
+ font-size: large;
+}
+
+.doctor-container {
+ width: 850px;
+ margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+
+ .medi-app {
+  font-size: 28px;
+ }
+
+ .my-appointments-header {
+  font-size: 20px;
+ }
+
+ .doctor-container {
+  width: 90%;
+ }
+
+ .doctor-card {
+  width: 100%;
+ }
+
+ .doctor-contents {
+  flex-direction: column;
+ }
+
+ .header {
+  margin-left: 0;
+  justify-content: space-between;
+ }
+
+ .vertical-line {
+  display: none;
+ }
 }

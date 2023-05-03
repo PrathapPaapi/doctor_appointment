@@ -31,7 +31,7 @@
                 <div class="d-flex">
                   <%= image_tag("clock.svg") %>
                   <p class="appointment-time">
-                    <%= slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p") %>
+                    <%= displayable_time(slot.slot_time) %>
                   </p>
                 </div>
               </div>
@@ -48,7 +48,11 @@
                 </div>
               </div>
               <div class="mt-4">
-                <%= button_to 'Cancel', appointments_booked_update_appointment_list_path, params: {slot_id: slot.id}, method: "get", class:"d-block btn btn-outline-danger", style: "width: 90px; height: 40px; margin: 0 auto;" %>
+                <% if Time.now < in_ist(slot.slot_time) - 30.minutes %>
+                  <%= button_to 'Cancel', appointments_booked_update_appointment_list_path, params: {slot_id: slot.id}, method: "get", data: { turbo_confirm: 'Are you sure?' }, class:"d-block btn btn-outline-danger", style: "width: 90px; height: 40px; margin: 0 auto;" %>
+                <% else %>
+                  <%= button_to 'Cancel',"", class:"d-block btn btn-outline-dark", :disabled => true, style: "width: 90px; height: 40px; margin: 0 auto;" %>
+              <% end %>
               </div>
             </div>
           </div>

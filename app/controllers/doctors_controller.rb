@@ -40,7 +40,7 @@ class DoctorsController < ApplicationController
     time = "Not Available"
     slots.each do |slot|
       if slot.available? && slot.slot_time > Time.now
-        time = slot.slot_time.in_time_zone("Chennai").strftime("%I:%M %p %b %d")
+        time = helpers.in_ist(slot.slot_time).strftime("%I:%M %p %b %d")
         break
       end
     end
