@@ -1,8 +1,8 @@
 <div class="container" style="width: 700px; margin-top: 10%; align-items: center">
   <div class="main-box">
     <%= image_tag("congrats.svg", :style => "width: 45%; margin-top: 20px;") %>
-    <p style="color: #2E7D2E;font-size: 25px; font-weight: 700;"> Congratulations</p>
-    <p style="font-size: x-large; font-weight: 300; margin-top: -10px;" >Appointment Booked</p>
+    <p style="color: #2E7D2E;font-size: 25px; font-weight: 700;"><%= t("appointments.congrats.congratulations") %></p>
+    <p style="font-size: x-large; font-weight: 300; margin-top: -10px;" ><%= t("appointments.congrats.appointment_booked") %></p>
     <div class="d-flex" style="margin-top: -10px; margin-left: 200px;">
       <%= image_tag("purple_calendar.svg") %>
       <p style=" color: #542EBF; font-size: 22px; font-weight: 700; margin-top: 15px; margin-left: 10px;">      
@@ -10,7 +10,7 @@
       </p>
     </div>
 
-    <p style="font-size: 14px;"> Meeting starts in </p>
+    <p style="font-size: 14px;"><%= t("appointments.congrats.meeting_starts_in") %></p>
     <div>
       <ul style="margin-left: -35px">
         <li>
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <%= button_to 'My Appointments', appointments_booked_my_appointments_path, method: :get, class: "my-appointments-button btn btn-primary btn-lg rounded-2 mt-5"%>
+  <%= button_to "#{t("appointments.congrats.my_appointments")}", appointments_booked_my_appointments_path, method: :get, class: "my-appointments-button btn btn-primary btn-lg rounded-2 mt-5"%>
 
   <script>
     let slot_time = "<%= @slot.slot_time %>";

@@ -1,7 +1,7 @@
 <div class="select-box">
   <div style="display: flex; align-items: center;">
     <%= image_tag("select_date_calendar.svg") %>
-    <h4 class="select-date-text p-3" style="margin-block: auto; " >Select a date</h4>
+    <h4 class="select-date-text p-3" style="margin-block: auto; " ><%= t("appointments.select_slot.select_date") %></h4>
   </div>
 
   <div class="day-buttons">
@@ -30,6 +30,6 @@
 
   <div class="mt-5">
     <p class="high-demand-warning-text"><%= t('appointments.select_slot.high_demand_warning_text')%></p>
-    <%= link_to "Book Appointment", appointments_add_details_path, id: "book-appointment", "data-test-target": "bookAppointment", data: {turbo_stream: true, turbo_method: :get}, class: "btn btn-primary btn-lg rounded-2", disabled: true, style: "text-align: center; font-weight: 600; font-size: large; width: 100%; height: 56px; margin-right: 10px"%>
+    <%= link_to "#{t("appointments.select_slot.book_appointment")}", appointments_add_details_path, id: "book-appointment", "data-test-target": "bookAppointment", data: {turbo_stream: true, turbo_method: :get}, class: "btn btn-primary btn-lg rounded-2", disabled: true, style: "text-align: center; font-weight: 600; font-size: large; width: 100%; height: 56px; margin-right: 10px"%>
   </div>
 </div>

@@ -8,4 +8,13 @@ class Slot < ApplicationRecord
     slot.user_id = user_id
     slot.save
   end
+
+  def self.update_cancelled_slot(slot_id)
+    slot = Slot.find(slot_id)
+    slot.user_id = nil
+    slot.currency = nil
+    slot.currency_rate = nil
+    slot.available = true
+    slot.save
+  end
 end

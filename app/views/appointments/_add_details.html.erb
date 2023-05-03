@@ -1,10 +1,10 @@
 <div class="add-details container" style="width: 390px; justify-content: center; margin-top: 10vh;">
   <%= @slot_id %>
-  <h2 style="text-align: center; font-weight: 600;">Add Details</h2>
+  <h2 style="text-align: center; font-weight: 600;"><%= t("appointments.add_detail.add_details") %></h2>
   <div class="form-section">
     <% if @user.errors.any? %>
       <div id="error_explanation" style="color: #B00100; background-color: cornsilk;">
-        <h5>Please enter correct inputs</h5>
+        <h5><%= t("appointments.add_detail.enter_correct_inputs") %></h5>
         <ul>
           <% @user.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div>
-        <%= form.submit "pay 500", data: {turbo_stream: true, turbo_method: :get}, class: "pay-button btn btn-primary btn-lg rounded-2 w-100 mt-5", :onclick=> 'loader()' %>
+        <%= form.submit "#{t("appointments.add_detail.pay_500")}", data: {turbo_stream: true, turbo_method: :get}, class: "pay-button btn btn-primary btn-lg rounded-2 w-100 mt-5", :onclick=> 'loader()' %>
       </div>
     <% end %>
   </div>

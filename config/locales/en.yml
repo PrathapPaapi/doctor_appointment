@@ -32,6 +32,38 @@
 en:
   hello: "Hello world"
 
+  doctors:
+    index:
+      next_available: "Next Available - "
+      book_visit: "Book Visit"
+
+    header:
+      my_appointments: "My Appointments"
+
   appointments:
     select_slot:
+      select_date: "Select a date"
       high_demand_warning_text: "Due to high demand, it is difficult to reschedule appointments. Please book your slot carefully!"
+      book_appointment: "Book Appointment"
+
+    slot:
+      select_time: "Select a time for "
+
+    add_detail:
+      add_details: "Add Details"
+      enter_correct_inputs: "Please enter correct inputs"
+      pay_500: "Pay 500"
+
+    congrats:
+      congratulations: "Congratulations"
+      appointment_booked: "Appointment Booked"
+      meeting_starts_in: "Meeting starts in"
+      my_appointments: "My Appointments"
+
+  appointments_booked:
+    appointments_list:
+      my_appointments: "My Appointments"
+      no_appointment: "No appointments"
+      download_invoice: "Download your Invoice"
+      amount_paid: "Amount Paid"
+      cancel: "Cancel"
