@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'appointments/slots'
   get 'appointments_booked/my_appointments'
   get 'appointments_booked/appointments_login'
-  get 'appointments_booked/appointments_list'
-  get 'appointments_booked/update_appointment_list'
+  get 'appointments_booked/cancel'
   get 'appointments_booked/generate_invoice'
+  get 'appointments_booked/create_session'
   
   resources :doctors
   resources :appointments

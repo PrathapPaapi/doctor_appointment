@@ -1,30 +1,22 @@
 class AppointmentsBookedController < ApplicationController
+
+  before_action :user_exists?, only: [:my_appointments]
+  before_action :find_user, only: [:my_appointments]
+  before_action :find_slot, only: [:cancel]
+
   def my_appointments
-    if session[:user_email].nil?
-      redirect_to action: 'appointments_login'
-    else
-      redirect_to action: 'appointments_list'
-    end
+    @slots = Slot.where(available: false, user_id: @user.id)
   end
 
   def appointments_login; end
 
-  def appointments_list
-    email = if session[:user_email].nil?
-              session[:user_email] = login_param
-            else
-              session[:user_email]
-            end
-    @slots = if User.find_by(email:).nil?
-               []
-             else
-               Slot.where(user_id: User.find_by(email:).id)
-             end
+  def create_session
+    session[:user_email] = login_param
+    redirect_to action: 'my_appointments'
   end
 
-  def update_appointment_list
-    slot_id = params[:slot_id]
-    Slot.update_cancelled_slot(slot_id)
+  def cancel
+    @slot.update_cancelled_slot
     redirect_to action: 'appointments_list'
   end
 
@@ -32,21 +24,21 @@ class AppointmentsBookedController < ApplicationController
     slot_id = params.require(:slot_id)
     respond_to do |format|
       format.csv do
-        file_name = GenerateInvoice.invoice('CSV', slot_id)
+        file_name = GenerateInvoice.generate('CSV', slot_id)
         send_file file_name,
                   filename: file_name,
                   type: 'text/csv',
                   disposition: 'attachment'
       end
       format.text do
-        file_name = GenerateInvoice.invoice('TXT', slot_id)
+        file_name = GenerateInvoice.generate('TXT', slot_id)
         send_file file_name,
                   filename: file_name,
                   type: 'text/txt',
                   disposition: 'attachment'
       end
       format.pdf do
-        file_name = GenerateInvoice.invoice('PDF', slot_id)
+        file_name = GenerateInvoice.generate('PDF', slot_id)
         send_file file_name,
                   filename: file_name,
                   type: 'application/pdf',
@@ -59,5 +51,20 @@ class AppointmentsBookedController < ApplicationController
 
   def login_param
     params.require(:email)
+  end
+
+  def user_exists?
+    if session[:user_email].nil?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to action: 'appointments_login'
+    end
+  end
+
+  def find_user
+    @user = User.find_by(email: session[:user_email])
+  end
+
+  def findslot
+    @slot = Slot.find params[:slot_id]
   end
 end

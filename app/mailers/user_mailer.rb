@@ -1,4 +1,6 @@
 class UserMailer < ApplicationMailer
+  helper :application
+
   default from: 'prathaprocks999@gmail.com'
 
   def notify(user, slot)

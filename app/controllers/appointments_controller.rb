@@ -2,6 +2,11 @@ class AppointmentsController < ApplicationController
   require 'uri'
   require 'net/http'
   require 'json'
+
+  before_action :find_slot_id, only: [:add_details]
+  before_action :find_slot, only: [:congrats]
+
+  WAIT_TIME_FOR_EMAIL_DELIVERY = 165
   def index
     @doctor_id = Doctor.find_by_id(params[:doctor_id]).id
     @slots = Doctor.find(@doctor_id).slots
@@ -10,9 +15,10 @@ class AppointmentsController < ApplicationController
   def select_slot; end
 
   def slots
-    @doctor_id = Doctor.find_by_id(params[:doctor_id]).id
+    @doctor = Doctor.find_by_id(params[:doctor_id])
     @day = Date.parse(params[:day])
-    @slots = Doctor.find(@doctor_id).slots.where("slot_time > ? AND slot_time < ?", @day.beginning_of_day, @day.end_of_day)
+    @slots = @doctor.slots_for_day @day
+
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update(:slots, partial: 'appointments/slots')
@@ -22,8 +28,6 @@ class AppointmentsController < ApplicationController
 
   def add_details
     @user = User.new
-    @slot_id = params[:slot_id]
-    @slot = Slot.find(@slot_id)
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.update(:second_page, partial: 'appointments/add_details')
@@ -33,15 +37,14 @@ class AppointmentsController < ApplicationController
 
   def congrats
     @params = user_params
-    session[:user_email] = @params[:email]
     @user = User.find_or_initialize_by(email: @params[:email])
     @user.name = @params[:name]
     respond_to do |format|
       sleep 1
       if @user.save
-        Slot.update_currency_and_user_id(@params, @user.id)
-        @slot = Slot.find(@params[:slot_id])
-        UserMailer.notify(@user, @slot).deliver_later(wait_until: @slot.slot_time + 165.minutes)
+        session[:user_email] = @user.email
+        @slot.update_currency_and_user_id(@params, @user.id)
+        UserMailer.notify(@user, @slot).deliver_later(wait_until: @slot.slot_time + WAIT_TIME_FOR_EMAIL_DELIVERY.minutes)
         format.turbo_stream do
           render turbo_stream: turbo_stream.update(:second_page, partial: 'appointments/congrats')
         end
@@ -57,6 +60,15 @@ class AppointmentsController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :slot_id, :currency)
+  end
+
+  def find_slot_id
+    @slot_id = params[:slot_id]
+  end
+
+  def find_slot
+    slot_id = params.require(:user).permit(:slot_id)[:slot_id]
+    @slot = Slot.find(slot_id)
   end
 end
 

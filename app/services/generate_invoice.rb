@@ -1,7 +1,7 @@
 class GenerateInvoice
   include ApplicationHelper
-  def self.invoice(format, slot_id)
-    new(format, slot_id).invoice
+  def self.generate(format, slot_id)
+    new(format, slot_id).generate
   end
 
   attr_reader :slot, :user, :doctor, :date, :time, :invoice_id, :amount_paid, :format
@@ -17,7 +17,7 @@ class GenerateInvoice
     @format = format
   end
 
-  def invoice
+  def generate
     case @format
     when 'CSV'
       invoice_in_csv

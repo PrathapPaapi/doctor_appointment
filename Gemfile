@@ -61,6 +61,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-doc'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -79,4 +80,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "shoulda-matchers"
 end
