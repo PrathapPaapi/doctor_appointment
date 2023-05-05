@@ -26,5 +26,9 @@ RSpec.describe Doctor, type: :model do
       expect(doctor.slots_for_day(Time.now)[0].id).to eq(doctor.slots.find(1).id)
       expect(doctor.slots_for_day(Time.now)[0].id).not_to eq(doctor.slots.find(2).id)
     end
+
+    it 'demonstrates next_slot_available functionality' do
+      expect(doctor.next_slot_available).to eq(doctor.slots.find(2).slot_time.in_time_zone('Chennai').strftime("%I:%M %p %b %d"))
+    end
   end
 end

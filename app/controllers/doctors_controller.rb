@@ -35,20 +35,6 @@ class DoctorsController < ApplicationController
     end
   end
 
-  def next_slot_available(doctor_id)
-    slots = Doctor.find(doctor_id).slots
-    time = "Not Available"
-    slots.each do |slot|
-      if slot.available? && slot.slot_time > Time.now
-        time = helpers.in_ist(slot.slot_time).strftime("%I:%M %p %b %d")
-        break
-      end
-    end
-    time
-  end
-
-  helper_method :next_slot_available
-
   # PATCH/PUT /doctors/1 or /doctors/1.json
   def update
     respond_to do |format|
