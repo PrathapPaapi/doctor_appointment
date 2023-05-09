@@ -17,7 +17,7 @@ class AppointmentsBookedController < ApplicationController
 
   def cancel
     @slot.update_cancelled_slot
-    redirect_to action: 'appointments_list'
+    redirect_to action: 'my_appointments'
   end
 
   def generate_invoice
@@ -64,7 +64,7 @@ class AppointmentsBookedController < ApplicationController
     @user = User.find_by(email: session[:user_email])
   end
 
-  def findslot
+  def find_slot
     @slot = Slot.find params[:slot_id]
   end
 end
